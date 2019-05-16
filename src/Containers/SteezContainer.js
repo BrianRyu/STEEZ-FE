@@ -1,11 +1,12 @@
 import React from 'react'
-import ProductContainer from './ProductContainer'
+import MySteez from './MySteez'
 
 class SteezContainer extends React.Component {
     render() {
         return (
             <div>
-                <ProductContainer />
+                <MySteez />
+                {/* don't forget to include the steezhub option here */}
             </div>
         )
     }

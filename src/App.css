@@ -1,12 +1,6 @@
 
 /* HEADER / NAV CSS */
 .navbar {
-  position: sticky;
-  z-index: 900;
-  background: white;
-  display: block;
-  order: 2;
-  transition: color 600ms ease 0s;
   font-family: Plain;
   font-size: 13px;
   font-weight: 500;
@@ -34,26 +28,26 @@
 
 /* GRID FOR PRODUCTS CSSS */
 .grid-container {
-  display: inline-grid;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  padding: 10px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(159px, 1fr));
+  width: 100%;
+  box-sizing: border-box;
+  gap: 1px 1px;
+  margin: 1px 0px 0px;
 }
 
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-  width: 25%;
-  float: left;
-  margin-left: 60px;
-  height: 400px;
+  position: initial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px 10px;
+
 }
 
-
 .product-image {
-    max-width:100%;
+    max-width: 200px;
     height:auto;
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 function ProductCard(props) {
     console.log(props.products)
@@ -11,4 +10,4 @@ function ProductCard(props) {
     )
 }
 
-export default connect()(ProductCard);
+export default ProductCard;

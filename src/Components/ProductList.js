@@ -10,22 +10,12 @@ class ProductList extends React.Component {
   componentDidMount() {
     this.props.fetchParts()
   }
-    
-  // productList(props) {
-  //   console.log(props)
-  //     const mapParts = (props) => {
-  //         let partsArray = Object.values(props.parts)
-  //         let partsCards = partsArray.map(parts => {
-  //             return <ProductCard key={parts.name} parts={parts} />
-  //         })
-  //         return partsCards;
-  //     }
-  // }
 
     render (){
         return (
             <div>
                 <h1 className="product-header"> My Products </h1>
+                <button className="product-add-button" >Add To My Products</button>
                 <ul className='grid-container'>
                   {this.props.parts.map(part => <ProductCard product={part.product} />)}
                 </ul>

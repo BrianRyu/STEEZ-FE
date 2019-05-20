@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class RegisterForm extends Component {
   render() {
     return (
-      <div>
+      <div className="register-div">
         <h3>RegisterPage</h3>
         Already have account? <Link to='login'>Login here</Link>
       </div>

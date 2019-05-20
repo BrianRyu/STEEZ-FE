@@ -1,15 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function ProductCard(props) {
-    console.log(props.products)
+    console.log(props)
     return (
-        <a className="grid-item" href=''>
-            <p className="product-font">{props.products.name}</p>
+        <nav className="grid-item">
+            <button className="product-x-button">
+            <span role="img">❌</span></button>
+            <p className="product-font">{props.product.name}</p>
             <br />
-            <img className="product-image" src={props.products.img_url} alt='' />
+            <Link to={`/parts/product/${props.product.name}`}>
+            <img className="product-image" src={props.product.img_url} alt='' />
+            </Link>
             <br/>
-            <button>Add To My.Fit</button>
-        </a>
+            <button className="add-to-fit-button">Add To My.Fit</button>
+        </nav>
     )
 }
 

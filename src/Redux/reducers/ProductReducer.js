@@ -1,15 +1,15 @@
+
 let initialState = {
-    products: []
+        parts: []
 }
 
 const productReducer = (state = initialState, action) => {
     switch(action.type) {
-        case "SAVE_PRODUCT_TO_STATE":
-            return {...state, products: action.payload};
+        case "FETCH_PARTS":
+            return {...state, parts: action.payload};
         default: 
             return state;
     }
 }
-
 
 export default productReducer;

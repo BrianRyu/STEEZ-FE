@@ -3,12 +3,13 @@ import { connect } from "react-redux";
 import ProductCard from "./ProductCard";
 
 // action import
-import {fetchParts} from '../Redux/actions/ProductActions'
+import {fetchProducts} from '../Redux/actions/ProductActions'
 
 class ProductList extends React.Component {
 
   componentDidMount() {
-    this.props.fetchParts()
+    console.log(this.props)
+    this.props.fetchProducts()
   }
 
     render (){
@@ -17,7 +18,7 @@ class ProductList extends React.Component {
                 <h1 className="product-header"> My Products </h1>
                 <button className="product-add-button" >Add To My Products</button>
                 <ul className='grid-container'>
-                  {this.props.parts.map(part => <ProductCard product={part.product} />)}
+                  {this.props.products.map(product => <ProductCard product={product} />)}
                 </ul>
             </div>
         )
@@ -25,9 +26,10 @@ class ProductList extends React.Component {
 }
 
 const stateToProps = state => {
+  console.log(state)
     return {
-        parts: state.parts
+        products: state.products
     };
 };
 
-export default connect(stateToProps, {fetchParts} )(ProductList);
+export default connect(stateToProps, {fetchProducts} )(ProductList);

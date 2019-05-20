@@ -1,15 +1,14 @@
 import React from 'react'
 
 function ProductCard(props) {
-    console.log(props.products)
     return (
-        <a className="grid-item" href=''>
-            <p className="product-font">{props.products.name}</p>
+        <nav className="grid-item">
+            <p className="product-font">{props.product.name}</p>
             <br />
-            <img className="product-image" src={props.products.img_url} alt='' />
+            <img className="product-image" src={props.product.img_url} alt='' />
             <br/>
             <button>Add To My.Fit</button>
-        </a>
+        </nav>
     )
 }
 

@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom'
 
+import {fetchLogIn} from '../Redux/actions/UserAction'
+
 class LoginForm extends React.Component {
   state = {
     username: "",
@@ -16,9 +18,10 @@ class LoginForm extends React.Component {
 
   handleSubmit = e => {
       console.log(e)
+      console.log(this.props)
     e.preventDefault();
     let userLoginObj = this.state;
-    
+    this.props.fetchLogIn(userLoginObj, this.props.history.push)
   };
 
   render() {

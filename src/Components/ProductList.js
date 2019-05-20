@@ -12,10 +12,12 @@ function ProductList(props) {
   };
 
   return (
-  <div className="gridcontainer">
-    <h1> My Products </h1>
-  {mapProducts()}
-  </div>)
+    <div>
+      <h1 className="product-header"> My Products </h1>
+      <ul className='grid-container'>
+      {mapProducts()}
+      </ul>
+    </div>)
 }
 
 const stateToProps = state => {

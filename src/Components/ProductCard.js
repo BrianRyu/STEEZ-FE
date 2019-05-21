@@ -1,21 +1,37 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function ProductCard(props) {
-    console.log(props)
-    return (
-        <nav className="grid-item">
-            <button className="product-x-button">
-            <span role="img">❌</span></button>
-            <p className="product-font">{props.product.name}</p>
-            <br />
-            <Link to={`/parts/product/${props.product.name}`}>
-            <img className="product-image" src={props.product.img_url} alt='' />
-            </Link>
-            <br/>
-            <button className="add-to-fit-button">Add To My.Fit</button>
-        </nav>
-    )
+import { connect } from 'react-redux'
+import {fetchProduct} from '../Redux/actions/ProductActions'
+
+
+class ProductCard extends React.Component {
+
+    componentDidMount(){
+        let id = parseInt(this.props.match.params.id)
+        this.props.fetchProduct(id)
+    }
+    render(){
+        return(
+            <nav className="grid-item">
+                <span className="product-delete" role="img" aria-label="x">❌</span>
+                <p className="product-font">{this.props.product.name}</p>
+                <br />
+                <Link to={`/product/${this.props.product.id}`}>
+                <img className="product-image" src={this.props.product.img_url} alt='' />
+                </Link>
+                <br/>
+                {/* <button className="add-to-fit-button">Add To My.Fit</button> */}
+            </nav>
+        )
+    }
 }
 
-export default ProductCard;
+const stateToProps = state => {
+    return {
+        current: state.product
+    };
+};
+
+export default connect(stateToProps, {fetchProduct} )(ProductCard);
+

@@ -2,8 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { addProduct } from '../Redux/actions/ProductActions'
-import { Link } from 'react-router-dom'
-
+import { withRouter } from 'react-router-dom'
 class ProductForm extends React.Component {
 
     state = {
@@ -22,9 +21,7 @@ class ProductForm extends React.Component {
         e.preventDefault()
         let newProductObj = this.state
         this.props.addProduct(newProductObj)
-        return (
-            <Link to="/mysteez"/>
-        )
+        this.props.history.push('/mysteez')
     }
     render(){
         return(
@@ -48,4 +45,4 @@ class ProductForm extends React.Component {
 }
 
 
-export default connect(null, {addProduct})(ProductForm);
+export default connect(null, {addProduct})(withRouter(ProductForm));

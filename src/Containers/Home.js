@@ -9,11 +9,11 @@ class Home extends React.Component {
             <div>
                 <br /><br/><br/><br/><br /><br/><br/><br/>
                 <Link to="/mysteez">
-                <img src="../mysteez.jpg" alt="MY.STEEZ" className="home-banner" />
+                <img src={require("../Photos/mysteez.jpg")} alt="MY.STEEZ" className="home-banner" />
                 </Link>
                 <br /><br/><br/><br/>
                 <Link to="/steezhub" >
-                <img src="" alt="STEEZ.HUB" className="home-banner" />
+                <img src={require("../Photos/steezhub.jpg")} alt="STEEZ.HUB" className="home-banner" />
                 </Link>
             </div>
         )

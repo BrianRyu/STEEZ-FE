@@ -131,9 +131,29 @@
 }
 
 
+/* PRODUCT FORM STYLING */
+.product-form-div {
+  text-align: center;
+  font-family: Plain;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color:black;
+  background-color: white;
+  padding: 10px;
+  align-items: stretch;
+  justify-content: center;	
+  justify-items: center;
+  align-content: space-between;
+}
 
 /* ERROR PAGE */
 
 .error-page {
   text-align: center;
 }
+

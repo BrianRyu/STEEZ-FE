@@ -69,6 +69,23 @@
   color: rgb(119, 119, 119);
 }
 
+.product-add-button {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: Plain;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 13px;
+  margin: 4px 10px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
 /* product image */
 .product-image {
   width: 30%;
@@ -84,7 +101,7 @@
   color: rgb(119, 119, 119);
 }
 
-.product-x-button {
+.product-delete {
   float: right;
   font-size: 30%;
 }
@@ -111,4 +128,12 @@
 
 .add-to-fit-button:hover {
   background-color: #e7e7e7;
+}
+
+
+
+/* ERROR PAGE */
+
+.error-page {
+  text-align: center;
 }

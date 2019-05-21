@@ -11,8 +11,33 @@ export const fetchProducts = () => dispatch => {
 export const fetchProduct = (id) => dispatch => {
     fetch(`http://localhost:3005/api/v1/products/${id}`)
     .then(res => res.json())
+    .then(current => {
+        dispatch({ type: "FETCH_PRODUCT", payload: current})
+    })
+}
+
+export const addProduct = (newProductObj) => dispatch => {
+    fetch('http://localhost:3005/api/v1/products', {
+        method: "POST",
+        headers: {
+            'Content-type': 'application/json',
+            Accept: 'application/json'
+        },
+        body: JSON.stringify(newProductObj)
+    })
+    .then(res => res.json())
     .then(product => {
-        console.log(product)
-        dispatch({ type: "FETCH_PRODUCT", payload: product})
+        dispatch({ type: "ADD_PRODUCT", payload: product })
+    })
+}
+
+export const deleteProduct = (id) => dispatch => {
+    console.log(id)
+    fetch(`http://localhost:3005/api/v1/products/${id}`, {
+        method: "DELETE"
+    })
+    .then(res => res.json())
+    .then(product => {
+        dispatch({ type: "DELETE_PRODUCT", payload: product.id})
     })
 }

@@ -2,19 +2,25 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { connect } from 'react-redux'
-import {fetchProduct} from '../Redux/actions/ProductActions'
+// import {fetchProduct} from '../Redux/actions/ProductActions'
+import { deleteProduct } from '../Redux/actions/ProductActions'
 
 
 class ProductCard extends React.Component {
 
-    componentDidMount(){
-        let id = parseInt(this.props.match.params.id)
-        this.props.fetchProduct(id)
+    // componentDidMount(){
+    //     let id = parseInt(this.props.product.id)
+    //     this.props.fetchProduct(id)
+    // }
+    handleClick = (e) => {
+        let id = this.props.product.id
+        deleteProduct(id)
     }
+
     render(){
         return(
             <nav className="grid-item">
-                <span className="product-delete" role="img" aria-label="x">❌</span>
+                <span onClick={this.handleClick} className="product-delete" role="img" aria-label="x">❌</span>
                 <p className="product-font">{this.props.product.name}</p>
                 <br />
                 <Link to={`/product/${this.props.product.id}`}>
@@ -33,5 +39,5 @@ const stateToProps = state => {
     };
 };
 
-export default connect(stateToProps, {fetchProduct} )(ProductCard);
+export default connect(stateToProps, {deleteProduct} )(ProductCard);
 

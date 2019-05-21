@@ -54,6 +54,7 @@
   text-align: center;
   height: 230px;
 }
+
 /* PRODUCT SECTION STYLE */
 
 .product-header {
@@ -104,6 +105,11 @@
 .product-delete {
   float: right;
   font-size: 30%;
+  cursor: pointer;
+}
+
+.product-delete:hover {
+  background-color: red;
 }
 
 .button {
@@ -157,3 +163,15 @@
   text-align: center;
 }
 
+
+/* HOME PAGE BANNERS */
+
+.home-banner {
+  position:relative;
+  z-index:-1;
+  display:block;
+  height:200px; width:auto;
+  width: 100%;
+  height: 250px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0)));
+}

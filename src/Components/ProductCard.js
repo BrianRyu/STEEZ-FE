@@ -14,7 +14,7 @@ class ProductCard extends React.Component {
     // }
     handleClick = (e) => {
         let id = this.props.product.id
-        deleteProduct(id)
+        this.props.deleteProduct(id)
     }
 
     render(){

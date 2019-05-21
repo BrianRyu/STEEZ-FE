@@ -32,12 +32,11 @@ export const addProduct = (newProductObj) => dispatch => {
 }
 
 export const deleteProduct = (id) => dispatch => {
-    console.log(id)
     fetch(`http://localhost:3005/api/v1/products/${id}`, {
         method: "DELETE"
     })
     .then(res => res.json())
     .then(product => {
-        dispatch({ type: "DELETE_PRODUCT", payload: product.id})
+        dispatch({ type: "DELETE_PRODUCT", payload: product})
     })
 }

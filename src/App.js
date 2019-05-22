@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-// import Home from './Containers/Home'
 import Error from './Components/Error'
 import LoginForm from './Components/LoginForm'
 import MySteez from './Containers/MySteez'

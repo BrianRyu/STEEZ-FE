@@ -84,7 +84,7 @@
   font-size: 13px;
   margin: 4px 10px;
   transition-duration: 0.4s;
-  cursor: pointer;
+  cursor: crosshair;
 }
 
 /* product image */
@@ -105,7 +105,7 @@
 .product-delete {
   float: right;
   font-size: 30%;
-  cursor: pointer;
+  cursor: crosshair;
 }
 
 .product-delete:hover {
@@ -123,7 +123,7 @@
   font-size: 16px;
   margin: 4px 2px;
   transition-duration: 0.4s;
-  cursor: pointer;
+  cursor: crosshair;
 }
 
 .add-to-fit-button {
@@ -157,6 +157,30 @@
   align-content: space-between;
 }
 
+
+/* ********************************************        PRODUCT SHOW PAGE CSS **************************************** */
+.product-show {
+  text-align: center;
+  font-family: Plain;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgb(119, 119, 119);
+}
+
+.show-img {
+  width: 40%;
+}
+
+.show-desc {
+  padding: 20px;
+}
+
+
 /* ERROR PAGE */
 
 .error-page {
@@ -167,11 +191,13 @@
 /* HOME PAGE BANNERS */
 
 .home-banner {
-  position:relative;
-  z-index:-1;
-  display:block;
-  height:200px; width:auto;
   width: 100%;
+  position: relative;
   height: 250px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0)));
+  cursor: crosshair;
+}
+
+.home-banner:hover {
+  webkit-filter: blur(4px);
+  filter: blur(4px);
 }

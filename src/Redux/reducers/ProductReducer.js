@@ -12,7 +12,7 @@ const productReducer = (state = initialState, action) => {
             return {...state, current: action.payload};
         case "ADD_PRODUCT":
             let newProduct = action.payload 
-            let addedArray = [ newProduct ,...state.products]
+            let addedArray = [...state.products, newProduct]
             return {...state, products: addedArray}
         case "DELETE_PRODUCT":
             let id = action.payload.id

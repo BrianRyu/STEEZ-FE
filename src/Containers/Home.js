@@ -1,13 +1,12 @@
 // home view is essentially a container that holds NavBar and SteezContainer
 import React from 'react'
-import SteezContainer from './SteezContainer'
 import { Link } from 'react-router-dom'
 
 class Home extends React.Component {
     render(){
         return (
             <div>
-                <br /><br/><br/><br/><br /><br/><br/><br/>
+                <br /><br/><br/><br/>
                 <Link to="/mysteez">
                 <img src={require("../Photos/mysteez.jpg")} alt="MY.STEEZ" className="home-banner" />
                 </Link>

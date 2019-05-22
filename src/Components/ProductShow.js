@@ -11,9 +11,11 @@ componentDidMount(){
 
     render() {
         return (
-            <div>
-                <h1>PRODUCT SHOW</h1>
-                <p></p>
+            <div className="product-show">
+                <h1>{this.props.product.name}</h1>
+                <br/>
+                <img className="show-img" src={this.props.product.img_url} alt=""/>
+                <p className="show-desc">{this.props.product.description}</p>
             </div>
         )
     }

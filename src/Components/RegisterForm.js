@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import { Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { createUser } from '../Redux/actions/UserAction'
+import { setCurrentUser } from '../Redux/actions/UserAction'
 
 class RegisterForm extends Component {
 
   state = {
     username: '',
     password: '',
-    passwordConfirmation: '',
+    confirmation: ''
   }
 
   handleChange = (e) => {
-    console.log(e.target.value)
     this.setState({
       [e.target.name]: e.target.value
     })
@@ -20,9 +19,39 @@ class RegisterForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.createUser(this.state)
-    // include the fetch function here imported from action file
+    if(this.state.password === this.state.confirmation){
+
+      fetch("http://localhost:3005/api/v1/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accepts": "application/json",
+        },
+        body: JSON.stringify(this.state)
+      })
+      .then(res => res.json())
+      .then((response) => {
+        console.log(response)
+        if (response.errors){
+          alert(response.errors)
+        } else {
+          this.props.setCurrentUser(response)
+        }
+      })
+		} else {
+			alert("Passwords don't match!")
+		}
   }
+
+  
+  setCurrentUser = (response) => {
+    this.setState({
+        currentUser: response.user
+    }, () => {
+        localStorage.setItem("token", response.token)
+        this.props.history.push(`/profile`)
+    })
+}
 
   render() {
     return (
@@ -36,7 +65,7 @@ class RegisterForm extends Component {
           <input name='password' value={this.state.password} onChange={this.handleChange} />
           <br/>
           <label>Password Confirmation: </label>
-          <input name='password' value={this.state.password} onChange={this.handleChange} />
+          <input name='confirmation' value={this.state.confirmation} onChange={this.handleChange} />
           <br/>
           <input type="submit" />
         </form>
@@ -46,4 +75,4 @@ class RegisterForm extends Component {
   }
 }
 
-export default connect(null, {createUser} )(RegisterForm);
+export default connect(null, {setCurrentUser} )(RegisterForm);

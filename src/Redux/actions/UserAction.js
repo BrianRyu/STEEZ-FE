@@ -1,28 +1,33 @@
-export const fetchLogIn = (userObj, push) => {
-    return (dispatch) => {
-      fetch("http://localhost:3000/api/v1/users", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json"
-        },
-        body: JSON.stringify(userObj)
+
+export const userPostFetch = (user) => {
+  return dispatch => {
+      return fetch("http://localhost:3005/api/v1/users", {
+          method: "POST",
+          headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json'
+          },
+          body: JSON.stringify({user})
       })
       .then(res => res.json())
-      .then((information) => {
-        if (information.jwt) {
-          dispatch(saveUserToState(information.user))
-          dispatch(saveTokenToState(information.jwt))
-          localStorage.setItem("jwt", information.jwt)
-          push("/home")
-        }
+      .then(data => {
+          if(data.message){
+              return data.message
+          } else {
+              localStorage.setItem("token", data.jwt)
+              dispatch(loginUser(data.user))
+          }
       })
-    }
   }
+}
 
-export const saveUserToState = (userObj) => {
+export const loginUser = userObj => ({
+    type: "LOGIN_USER", payload: userObj})
+
+const saveUserToState = (userObj) => {
 return {type: "SAVE_USER_TO_STATE", payload: userObj}
 }
 
-export const saveTokenToState = (token) => {
+const saveTokenToState = (token) => {
 return {type: "SAVE_TOKEN_TO_STATE", payload: token}
 }

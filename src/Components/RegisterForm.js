@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { userPostFetch } from '../Redux/actions/RegisterActions'
+import { userPostFetch } from '../Redux/actions/UserAction'
 
 class RegisterForm extends Component {
 

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom'
 
-import {fetchLogIn} from '../Redux/actions/UserAction'
+import {loginUser} from '../Redux/actions/UserAction'
 
 class LoginForm extends React.Component {
   state = {
@@ -17,11 +17,24 @@ class LoginForm extends React.Component {
   };
 
   handleSubmit = e => {
-      console.log(e)
-      console.log(this.props)
     e.preventDefault();
-    let userLoginObj = this.state;
-    this.props.fetchLogIn(userLoginObj, this.props.history.push)
+    fetch("http://localhost:3005/api/v1/login", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        Accepts: 'application/json'
+      },
+      body: JSON.stringify(this.state)
+    })
+    .then(res => res.json())
+    .then((data) => {
+      if(data.error){
+        alert(data.error)
+      } else {
+        this.props.loginUser(data)
+        this.props.history.push('/home')
+      }
+    })
   };
 
   render() {
@@ -45,4 +58,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default connect()(LoginForm);
+export default connect(null, {loginUser})(LoginForm);

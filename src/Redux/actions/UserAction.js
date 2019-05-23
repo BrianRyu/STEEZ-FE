@@ -1,5 +1,5 @@
 
-export const userPostFetch = (user) => {
+export const createUser = (user) => {
   return dispatch => {
       return fetch("http://localhost:3005/api/v1/users", {
           method: "POST",

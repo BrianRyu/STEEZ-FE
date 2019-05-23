@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { userPostFetch } from '../Redux/actions/UserAction'
+import { createUser } from '../Redux/actions/UserAction'
 
 class RegisterForm extends Component {
 
   state = {
     username: '',
-    password: ''
+    password: '',
+    passwordConfirmation: '',
   }
 
   handleChange = (e) => {
@@ -19,7 +20,7 @@ class RegisterForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.userPostFetch(this.state)
+    this.props.createUser(this.state)
     // include the fetch function here imported from action file
   }
 
@@ -34,6 +35,9 @@ class RegisterForm extends Component {
           <label>Password: </label>
           <input name='password' value={this.state.password} onChange={this.handleChange} />
           <br/>
+          <label>Password Confirmation: </label>
+          <input name='password' value={this.state.password} onChange={this.handleChange} />
+          <br/>
           <input type="submit" />
         </form>
         Already have account? <Link to='login'>Login here</Link>
@@ -42,4 +46,4 @@ class RegisterForm extends Component {
   }
 }
 
-export default connect(null, {userPostFetch} )(RegisterForm);
+export default connect(null, {createUser} )(RegisterForm);

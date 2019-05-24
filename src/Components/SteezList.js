@@ -6,11 +6,15 @@ class SteezList extends React.Component {
         return (
             <div>
                 <ul>
-                    {}
+                    {console.log(this.props)}
                 </ul>
             </div>
         )
     }
 }
 
-export default SteezList;
+const stateToProps = (state) => {
+    return {products: state.products}
+}
+
+export default connect(stateToProps)(SteezList);

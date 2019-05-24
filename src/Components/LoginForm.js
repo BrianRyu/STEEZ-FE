@@ -31,6 +31,8 @@ class LoginForm extends React.Component {
       if(data.error){
         alert(data.error)
       } else {
+        console.log(data)
+        localStorage.setItem("token", data.jwt)
         this.props.loginUser(data)
         this.props.history.push('/home')
       }

@@ -31,11 +31,12 @@ class RegisterForm extends Component {
       })
       .then(res => res.json())
       .then((response) => {
-        console.log(response)
         if (response.errors){
           alert(response.errors)
         } else {
+          localStorage.setItem("token", response.jwt)
           this.props.setCurrentUser(response)
+          this.props.history.push('/home')
         }
       })
 		} else {
@@ -43,15 +44,6 @@ class RegisterForm extends Component {
 		}
   }
 
-  
-  setCurrentUser = (response) => {
-    this.setState({
-        currentUser: response.user
-    }, () => {
-        localStorage.setItem("token", response.token)
-        this.props.history.push(`/profile`)
-    })
-}
 
   render() {
     return (

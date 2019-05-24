@@ -1,5 +1,5 @@
 const initialState = {
-    users = [],
+    users: [],
     currentUser: null
 }
 
@@ -10,8 +10,7 @@ export default function reducer(state = initialState, action) {
         case "CREATE_USER":
             let newUser = action.payload 
             let addedArray = [...state.products, newUser]
-            console.log("FROM REDUCER", action)
-            return {...state, users: addedArray}
+            return {...state, users: addedArray} && {...state, currentUser: newUser}
         default:
             return state;
     }

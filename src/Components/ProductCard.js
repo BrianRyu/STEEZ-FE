@@ -15,7 +15,7 @@ class ProductCard extends React.Component {
     render(){
         return(
             <nav className="grid-item">
-                <span onClick={this.handleClick} className="product-delete" role="img" aria-label="x">❌</span>
+                {/* <span onClick={this.handleClick} className="product-delete" role="img" aria-label="x">❌</span> */}
                 <p className="product-font">{this.props.product.name}</p>
                 <br />
                 <Link to={`/product/${this.props.product.id}`}>

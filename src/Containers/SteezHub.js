@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductList from '../Components/ProductList'
+import SteezFitList from '../Components/SteezFitList'
 
 class SteezHub extends React.Component {
     render() {
@@ -8,6 +9,8 @@ class SteezHub extends React.Component {
                 <div>
                     <h1 className="product-header"> Products </h1>
                     <ProductList />
+                    <h1 className="product-header"> Steez Fits </h1>
+                    <SteezFitList />
                 </div>
             </div>
         )

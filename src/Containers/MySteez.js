@@ -1,5 +1,6 @@
 import React from 'react'
 import SteezList from '../Components/SteezList'
+import MyProducts from '../Components/MyProducts'
 
 
 class MySteez extends React.Component {
@@ -12,6 +13,7 @@ class MySteez extends React.Component {
                     <SteezList />
                     <h1 className="product-header">My Products</h1>
                     <button className="product-add-button">+</button>
+                    <MyProducts />
                 </div>
             </div>
         )

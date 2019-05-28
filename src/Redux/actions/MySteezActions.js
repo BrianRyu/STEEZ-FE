@@ -5,3 +5,11 @@ export const fetchPost = (id) => dispatch => {
         dispatch({ type: "FETCH_POST", payload: current})
     })
 }
+
+export const fetchPosts = () => dispatch => {
+    fetch('http://localhost:3005/api/v1/posts')
+    .then(res => res.json())
+    .then(posts => {
+        dispatch({type: "FETCH_POSTS", payload: posts})
+    })
+}

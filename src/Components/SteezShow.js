@@ -25,7 +25,9 @@ class SteezShow extends React.Component {
                     <button>Likes: {this.props.post.likes}</button> 
 
                 </div>
+                <br />
                 <div>
+                    <p className="product-header"> Outfit Pieces </p>
                     <SteezProducts />
                 </div>
             </div>

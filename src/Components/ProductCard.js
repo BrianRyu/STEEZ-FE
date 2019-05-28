@@ -12,6 +12,7 @@ class ProductCard extends React.Component {
     //     let id = parseInt(this.props.product.id)
     //     this.props.fetchProduct(id)
     // }
+    
     handleClick = (e) => {
         let id = this.props.product.id
         this.props.deleteProduct(id)

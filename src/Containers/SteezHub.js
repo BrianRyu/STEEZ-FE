@@ -1,11 +1,18 @@
 import React from 'react'
+import ProductList from '../Components/ProductList'
+import { Link } from 'react-router-dom'
 
 class SteezHub extends React.Component {
     render() {
         return (
             <div>
-                <h1>STEEZ.HUB IS CURRENTLY UNDER CONSTRUCTION.</h1>
-                <p>Please return later.</p>
+                <div>
+                    <h1 className="product-header"> Products </h1>
+                    <Link to="/add-product">
+                    <button className="product-add-button" >Add To Products</button>
+                    </Link>
+                    <ProductList />
+                </div>
             </div>
         )
     }

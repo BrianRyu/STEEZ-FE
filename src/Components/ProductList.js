@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import ProductCard from "./ProductCard";
 
-
 // action import
 import {fetchProducts} from '../Redux/actions/ProductActions'
 
@@ -25,7 +24,8 @@ class ProductList extends React.Component {
 
 const stateToProps = state => {
     return {
-        products: state.products
+        products: state.products.allProducts,
+        user: state.users.currentUser
     };
 };
 

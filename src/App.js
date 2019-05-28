@@ -9,9 +9,17 @@ import RegisterForm from './Components/RegisterForm';
 import ProductShow from './Components/ProductShow'
 import ProductForm from './Components/ProductForm';
 import Home from './Containers/Home'
+import Steezhub from './Containers/SteezHub'
 
+import { connect } from 'react-redux'
+
+import {getProfileFetch} from './Redux/actions/UserAction'
 
 class App extends React.Component {
+
+  componentDidMount(){
+    this.props.getProfileFetch()
+  }
 
 
 
@@ -25,6 +33,7 @@ class App extends React.Component {
             <Route path="/login" component={LoginForm} />
             <Route path="/register" component={RegisterForm} />
             <Route path="/mysteez" component={MySteez} />
+            <Route path="/steezhub" component={Steezhub}/>
             <Route path="/product/:id" component={ProductShow} />
             <Route path="/add-product" component={ProductForm} />
             <Route path="/home" component={Home} />
@@ -36,4 +45,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default connect(null, {getProfileFetch})(App);

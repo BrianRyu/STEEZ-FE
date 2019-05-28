@@ -194,6 +194,8 @@
   position: relative;
   height: 250px;
   cursor: crosshair;
+  background-size: contain;
+  background-position: center;
 }
 
 .home-banner:hover {

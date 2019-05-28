@@ -21,8 +21,8 @@ class LoginForm extends React.Component {
     fetch("http://localhost:3005/api/v1/login", {
       method: "POST",
       headers: {
-        "content-type": "application/json",
-        Accepts: 'application/json'
+        "Content-Type": "application/json",
+        "Accepts": 'application/json'
       },
       body: JSON.stringify(this.state)
     })
@@ -31,7 +31,9 @@ class LoginForm extends React.Component {
       if(data.error){
         alert(data.error)
       } else {
-        this.props.loginUser(data)
+        console.log(data)
+        localStorage.setItem("token", data.jwt)
+        this.props.loginUser(data.user)
         this.props.history.push('/home')
       }
     })

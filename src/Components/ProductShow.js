@@ -10,6 +10,7 @@ componentDidMount(){
 }
 
     render() {
+        console.log(this.props)
         return (
             <div className="product-show">
                 <h1>{this.props.product.name}</h1>
@@ -23,7 +24,7 @@ componentDidMount(){
 
 const stateToProps = (state) => {
     return {
-        product: state.current
+        product: state.products.current
     }
 }
 

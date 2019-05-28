@@ -2,16 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { connect } from 'react-redux'
-// import {fetchProduct} from '../Redux/actions/ProductActions'
 import { deleteProduct } from '../Redux/actions/ProductActions'
 
 
 class ProductCard extends React.Component {
-
-    // componentDidMount(){
-    //     let id = parseInt(this.props.product.id)
-    //     this.props.fetchProduct(id)
-    // }
     
     handleClick = (e) => {
         let id = this.props.product.id
@@ -28,7 +22,6 @@ class ProductCard extends React.Component {
                 <img className="product-image" src={this.props.product.img_url} alt='' />
                 </Link>
                 <br/>
-                {/* <button className="add-to-fit-button">Add To My.Fit</button> */}
             </nav>
         )
     }

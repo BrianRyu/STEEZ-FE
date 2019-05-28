@@ -16,8 +16,10 @@ class SteezList extends React.Component {
     }
 }
 
-const stateToProps = (state) => ({
-    posts: state.users.currentUser.posts
-})
+const stateToProps = (state) => {
+    return {
+        posts: state.users.currentUser.posts
+    }
+}
 
 export default connect(stateToProps)(SteezList);

@@ -3,7 +3,9 @@ import React from 'react'
 class SteezCard extends React.Component {
     render(){
         return(
-            <h1>{console.log(this.props)}</h1>
+            <div>
+                <p className="product-font">{this.props.post.name}</p>
+            </div>
         )
     }
 }

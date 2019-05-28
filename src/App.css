@@ -202,3 +202,12 @@
   webkit-filter: blur(4px);
   filter: blur(4px);
 }
+
+
+
+
+/* POST CSS */
+
+.post-image {
+  width: 40%;
+}

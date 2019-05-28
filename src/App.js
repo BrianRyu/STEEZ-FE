@@ -17,9 +17,9 @@ import {getProfileFetch} from './Redux/actions/UserAction'
 
 class App extends React.Component {
 
-  // componentDidMount(){
-  //   this.props.getProfileFetch()
-  // }
+  componentDidMount(){
+    this.props.getProfileFetch()
+  }
 
 
 

@@ -1,11 +1,12 @@
 let initialState = {
-    posts: []
+    users: []
 }
 
 const mySteezReducer = (state = initialState, action) => {
     switch(action.type) {
-        case "":
-            return {}
+        case "FETCH_USERS":
+            return {...state, users: action.type}
+
         default:
             return state;
     }

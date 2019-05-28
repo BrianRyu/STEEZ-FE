@@ -9,3 +9,4 @@ export const rootReducer = combineReducers({
     products: ProductReducer,
     posts: MySteezReducer
 })
+

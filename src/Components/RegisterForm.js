@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { setCurrentUser } from '../Redux/actions/UserAction'
+import { createUser, loginUser } from '../Redux/actions/UserAction'
 
 class RegisterForm extends Component {
 
@@ -30,12 +30,14 @@ class RegisterForm extends Component {
         body: JSON.stringify(this.state)
       })
       .then(res => res.json())
-      .then((response) => {
-        if (response.errors){
-          alert(response.errors)
+      .then((data) => {
+        if (data.errors){
+          alert(data.errors)
         } else {
-          localStorage.setItem("token", response.jwt)
-          this.props.setCurrentUser(response)
+          localStorage.setItem("token", data.jwt)
+          this.props.createUser(data)
+          console.log(data)
+          loginUser(data.user)
           this.props.history.push('/home')
         }
       })
@@ -67,4 +69,4 @@ class RegisterForm extends Component {
   }
 }
 
-export default connect(null, {setCurrentUser} )(RegisterForm);
+export default connect(null, {createUser, loginUser} )(RegisterForm);

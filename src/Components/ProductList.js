@@ -24,7 +24,8 @@ class ProductList extends React.Component {
 
 const stateToProps = state => {
     return {
-        products: state.products.allProducts
+        products: state.products.allProducts,
+        user: state.users.currentUser
     };
 };
 

@@ -1,6 +1,6 @@
 const initialState = {
     users: [],
-    currentUser: null
+    currentUser: {}
 }
 
 export default function reducer(state = initialState, action) {
@@ -8,9 +8,11 @@ export default function reducer(state = initialState, action) {
         case "LOGIN_USER":
             return {...state, currentUser: action.payload}
         case "CREATE_USER":
-            let newUser = action.payload 
-            let addedArray = [...state.products, newUser]
-            return {...state, users: addedArray} && {...state, currentUser: newUser}
+            let newUser = action.payload
+            let addedArray = [...state.users, newUser]
+            return {...state, users: addedArray, currentUser: newUser}
+        case "LOGOUT_USER":
+            return {...state, currentUser: {} }
         default:
             return state;
     }

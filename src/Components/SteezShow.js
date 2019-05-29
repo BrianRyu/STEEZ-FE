@@ -12,8 +12,8 @@ class SteezShow extends React.Component {
         this.props.fetchPost(id)
     }
 
-    handleClick = (id) => {
-        this.props.increaseLike(this.props.post.id)
+    handleClick = () => {
+        this.props.increaseLike(this.props.post)
     }
 
     render(){
@@ -27,7 +27,7 @@ class SteezShow extends React.Component {
                     <p>Views: {this.props.post.views}</p>
                     <br />
                     {this.props.currentUser !== null
-                    ? <button onClick={this.handleClick}>Likes: {this.props.post.likes}</button> 
+                    ? <button className="button" onClick={this.handleClick}>Likes: {this.props.post.likes}</button> 
                     : null}
                 </div>
                 <br />

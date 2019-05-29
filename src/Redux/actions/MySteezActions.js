@@ -14,18 +14,37 @@ export const fetchPosts = () => dispatch => {
     })
 }
 
-export const increaseLike = (id) => dispatch => {
-    fetch(`http://localhost:3005/api/v1/posts/${id}`, {
+export const increaseView = (postObj) => dispatch => {
+    fetch(`http://localhost:3005/api/v1/posts/${postObj.id}`, {
         method: "PATCH",
         headers: {
             'Content-Type': 'application/json',
             Accept: 'application/json'
         },
-        body: JSON.stringify(id)
+        body: JSON.stringify({
+            views: postObj.views + 1
+        })
     })
     .then(res => res.json())
     .then(post => {
-        console.log(post)
+        dispatch({ type: "INCREASE_VIEW", payload: post })
+    })
+}
+
+
+export const increaseLike = (postObj) => dispatch => {
+    fetch(`http://localhost:3005/api/v1/posts/${postObj.id}`, {
+        method: "PATCH",
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+        },
+        body: JSON.stringify({
+            likes: postObj.likes + 1
+        })
+    })
+    .then(res => res.json())
+    .then(post => {
         dispatch({ type: "INCREASE_LIKE", payload: post })
     })
 }

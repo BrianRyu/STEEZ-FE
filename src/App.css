@@ -117,17 +117,25 @@
 }
 
 .button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
   padding: 16px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-family: Plain;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 13px;
+  margin: 4px 30px;
   transition-duration: 0.4s;
   cursor: crosshair;
+}
+
+.button:hover {
+  filter: blur(1px);
+  transform: scale(1.1);
 }
 
 .add-to-fit-button {

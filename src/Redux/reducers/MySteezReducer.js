@@ -10,12 +10,15 @@ const mySteezReducer = (state = initialState, action) => {
         case "FETCH_POSTS":
             return {...state, allPosts: action.payload}
         case "INCREASE_LIKE":
-        console.log(state.allPosts)
-        console.log(state.currentPost)
-            // return {...state, currentPost: {
-            //     ...state.currentPost, likes: state.currentPost.likes + 1
-            //     }
-            // }
+            return {...state, currentPost: {
+                ...state.currentPost, likes: state.currentPost.likes + 1
+                }
+            }
+        case "INCREASE_VIEW":
+            return {...state, currentPost: {
+                ...state.currentPost, views: state.currentPost.views + 1
+            }
+        }
         default:
             return state;
     }

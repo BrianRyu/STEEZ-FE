@@ -7,6 +7,7 @@ class SteezList extends React.Component {
 
     render(){
         return (
+
             <div>
                 <ul className="grid-container">
                     {this.props.posts ? this.props.posts.map(post => <SteezCard post={post}/>) 

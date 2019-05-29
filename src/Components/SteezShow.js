@@ -12,6 +12,10 @@ class SteezShow extends React.Component {
         this.props.fetchPost(id)
     }
 
+    handleClick = () => {
+        
+    }
+
     render(){
         return(
             <div>
@@ -22,8 +26,9 @@ class SteezShow extends React.Component {
                     <br />
                     <p>Views: {this.props.post.views}</p>
                     <br />
-                    <button>Likes: {this.props.post.likes}</button> 
-
+                    {this.props.currentUser !== null
+                    ? <button onClick={this.handleClick}>Likes: {this.props.post.likes}</button> 
+                    : null}
                 </div>
                 <br />
                 <div>
@@ -38,7 +43,8 @@ class SteezShow extends React.Component {
 
 const stateToProps = state => {
     return {
-        post: state.posts.currentPost
+        post: state.posts.currentPost,
+        currentUser: state.users.currentUser
     }
 }
 

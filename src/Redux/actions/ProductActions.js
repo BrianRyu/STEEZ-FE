@@ -16,12 +16,13 @@ export const fetchProduct = (id) => dispatch => {
     })
 }
 
-export const addProduct = (newProductObj) => dispatch => {
+export const addProduct = (newProductObj, localStorage) => dispatch => {
     fetch('http://localhost:3005/api/v1/products', {
         method: "POST",
         headers: {
             'Content-type': 'application/json',
-            Accept: 'application/json'
+            Accept: 'application/json',
+            "Authorization": `BEARER ${localStorage.token}`
         },
         body: JSON.stringify(newProductObj)
     })

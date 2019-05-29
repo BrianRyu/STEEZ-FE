@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom'
 
-import {loginUser} from '../Redux/actions/UserAction'
+import {getProfileFetch} from '../Redux/actions/UserAction'
 
 class LoginForm extends React.Component {
   state = {
@@ -31,9 +31,8 @@ class LoginForm extends React.Component {
       if(data.error){
         alert(data.error)
       } else {
-        console.log(data)
         localStorage.setItem("token", data.jwt)
-        this.props.loginUser(data.user)
+        this.props.getProfileFetch()
         this.props.history.push('/home')
       }
     })
@@ -60,4 +59,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default connect(null, {loginUser})(LoginForm);
+export default connect(null, {getProfileFetch})(LoginForm);

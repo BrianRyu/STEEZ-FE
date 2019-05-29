@@ -54,6 +54,11 @@
   height: 250px;
 }
 
+.grid-item:hover {
+  transform: scale(1.1);
+  cursor: crosshair;
+}
+
 /* PRODUCT SECTION STYLE */
 
 .product-header {
@@ -201,4 +206,13 @@
 .home-banner:hover {
   webkit-filter: blur(4px);
   filter: blur(4px);
+}
+
+
+
+
+/* POST CSS */
+
+.post-image {
+  width: 40%;
 }

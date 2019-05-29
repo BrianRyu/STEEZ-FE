@@ -10,6 +10,7 @@ import ProductShow from './Components/ProductShow'
 import ProductForm from './Components/ProductForm';
 import Home from './Containers/Home'
 import Steezhub from './Containers/SteezHub'
+import SteezShow from './Components/SteezShow';
 
 import { connect } from 'react-redux'
 
@@ -34,6 +35,7 @@ class App extends React.Component {
             <Route path="/register" component={RegisterForm} />
             <Route path="/mysteez" component={MySteez} />
             <Route path="/steezhub" component={Steezhub}/>
+            <Route path="/post/:id" component={SteezShow} />
             <Route path="/product/:id" component={ProductShow} />
             <Route path="/add-product" component={ProductForm} />
             <Route path="/home" component={Home} />

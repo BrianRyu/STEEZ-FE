@@ -3,19 +3,15 @@ import SteezCard from './SteezCard'
 
 import { connect } from 'react-redux'
 
-import { fetchUsers } from '../Redux/actions/MySteezActions'
-
 class SteezList extends React.Component {
-
-    componentDidMount() {
-        this.props.fetchUsers()
-      }
 
     render(){
         return (
+
             <div>
-                <ul>
-                    {this.props.users.map(user => <SteezCard user={user}/>)}
+                <ul className="grid-container">
+                    {this.props.posts ? this.props.posts.map(post => <SteezCard post={post}/>) 
+                    : <p>Please Post More Fits!</p> }
                 </ul>
             </div>
         )
@@ -24,8 +20,8 @@ class SteezList extends React.Component {
 
 const stateToProps = (state) => {
     return {
-        users: state.users.users
+        posts: state.users.currentUser.posts
     }
 }
 
-export default connect(stateToProps, {fetchUsers})(SteezList);
+export default connect(stateToProps)(SteezList);

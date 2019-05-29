@@ -51,7 +51,7 @@
   padding: 20px;
   font-size: 30px;
   text-align: center;
-  height: 250px;
+  height: 275px;
 }
 
 .grid-item:hover {
@@ -223,4 +223,8 @@
 
 .post-image {
   width: 40%;
+}
+
+.post-button-div {
+  text-align: center;
 }

@@ -34,6 +34,9 @@ class SteezShow extends React.Component {
                 <div>
                     <p className="product-header"> Outfit Pieces </p>
                     <SteezProducts />
+                    <div className="post-button-div">
+                        <button className="button">+</button>
+                    </div>
                 </div>
             </div>
 

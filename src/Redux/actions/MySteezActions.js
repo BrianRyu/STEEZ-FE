@@ -48,3 +48,25 @@ export const increaseLike = (postObj) => dispatch => {
         dispatch({ type: "INCREASE_LIKE", payload: post })
     })
 }
+
+export const addPost = (postObj, id, localStorage) => dispatch => {
+    fetch('http://localhost:3005/api/v1/posts', {
+        method: "POST",
+        headers: {
+            'Content-type': 'application/json',
+            Accept: 'application/json',
+            "Authorization": `BEARER ${localStorage.token}`
+        },
+        body: JSON.stringify({
+            name: postObj.name,
+            img_url: postObj.img_url,
+            user_id: id,
+            likes: 0,
+            views: 0
+        })
+    })
+    .then(res => res.json())
+    .then(post => {
+        dispatch({ type: "ADD_POST", payload: post })
+    })
+}

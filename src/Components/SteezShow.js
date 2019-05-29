@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchPost } from '../Redux/actions/MySteezActions'
+import { fetchPost, increaseLike } from '../Redux/actions/MySteezActions'
 
 import { connect } from 'react-redux'
 import SteezProducts from './SteezProducts'
@@ -12,6 +12,10 @@ class SteezShow extends React.Component {
         this.props.fetchPost(id)
     }
 
+    handleClick = (id) => {
+        this.props.increaseLike(this.props.post.id)
+    }
+
     render(){
         return(
             <div>
@@ -22,8 +26,9 @@ class SteezShow extends React.Component {
                     <br />
                     <p>Views: {this.props.post.views}</p>
                     <br />
-                    <button>Likes: {this.props.post.likes}</button> 
-
+                    {this.props.currentUser !== null
+                    ? <button onClick={this.handleClick}>Likes: {this.props.post.likes}</button> 
+                    : null}
                 </div>
                 <br />
                 <div>
@@ -38,8 +43,9 @@ class SteezShow extends React.Component {
 
 const stateToProps = state => {
     return {
-        post: state.posts.currentPost
+        post: state.posts.currentPost,
+        currentUser: state.users.currentUser
     }
 }
 
-export default connect(stateToProps, {fetchPost})(SteezShow);
+export default connect(stateToProps, {fetchPost, increaseLike})(SteezShow);

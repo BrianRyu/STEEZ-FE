@@ -21,7 +21,6 @@ class ProductForm extends React.Component {
         e.preventDefault()
         let newProductObj = this.state
         this.props.addProduct(newProductObj, localStorage)
-        console.log(localStorage)
         this.props.history.push('/steezhub')
     }
     render(){

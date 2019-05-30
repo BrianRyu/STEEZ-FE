@@ -46,12 +46,12 @@ class LoginForm extends React.Component {
           <label>
             Username:
             <input type="text" name="username" value={this.state.username} onChange={this.handleChange}/>
-          </label> <br/>
+          </label> <br/><br/>
           <label>
             Password:
             <input type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
-          </label> <br/>
-          <input className="login-submit" type="submit" /> <br/>
+          </label> <br/><br/>
+          <input className="login-submit" type="submit" /> <br/><br/>
           Don't have account? <Link to='register'>Register here</Link>
         </form>
       </div>

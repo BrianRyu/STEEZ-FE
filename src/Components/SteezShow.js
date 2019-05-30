@@ -40,7 +40,7 @@ class SteezShow extends React.Component {
                     <SteezProducts />
                     <div className="post-button-div">
                         {this.props.currentUser === null || this.props.post.user_id !== this.props.currentUser.id
-                        ? <p>Please Login For More Features!</p>
+                        ? null
                         : <button onClick={this.handleButton} className="button">+</button>}
                     </div>
                 </div>

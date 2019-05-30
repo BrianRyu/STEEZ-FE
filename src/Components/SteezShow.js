@@ -39,7 +39,9 @@ class SteezShow extends React.Component {
                     <p className="product-header"> Outfit Pieces </p>
                     <SteezProducts />
                     <div className="post-button-div">
-                        <button onClick={this.handleButton} className="button">+</button>
+                        {this.props.currentUser === null || this.props.post.user_id !== this.props.currentUser.id
+                        ? <p>Please Login For More Features!</p>
+                        : <button onClick={this.handleButton} className="button">+</button>}
                     </div>
                 </div>
             </div>

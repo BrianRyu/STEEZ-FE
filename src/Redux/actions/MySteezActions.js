@@ -86,7 +86,6 @@ export const addPiece = (pieceId, postId, localStorage) => dispatch => {
     })
     .then(res => res.json())
     .then(piece => {
-        console.log(piece)
         dispatch({ type: "ADD_PIECE", payload: piece})
     })
 }    

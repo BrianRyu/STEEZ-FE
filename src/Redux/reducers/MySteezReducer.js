@@ -1,7 +1,6 @@
 let initialState = {
     allPosts: [],
-    currentPost: {},
-    allParts: []
+    currentPost: {}
 }
 
 const mySteezReducer = (state = initialState, action) => {
@@ -25,10 +24,6 @@ const mySteezReducer = (state = initialState, action) => {
             let newPost = action.payload
             let addedArray = [...state.allPosts, newPost]
             return {...state, allPosts: addedArray}
-        case "ADD_PIECE":
-            let newPiece = action.payload
-            console.log(state.currentPost)
-            console.log(newPiece)
         default:
             return state;
     }

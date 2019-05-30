@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductList from '../Components/ProductList'
+import TopFitList from '../Components/TopFitList'
 import SteezFitList from '../Components/SteezFitList'
 
 import { Link } from 'react-router-dom'
@@ -10,6 +11,10 @@ class SteezHub extends React.Component {
         return (
             <div>
                 <div>
+                    <h1 className="product-header"> SteezFits Of The Week </h1>
+                    <p className="top-product-font">Top 3 Highest Likes</p>
+                    <TopFitList />
+                    <br/><br/>
                     <h1 className="product-header"> All Products </h1>
                     <Link to="/add-product">
                     {this.props.currentUser !== null 
@@ -17,7 +22,7 @@ class SteezHub extends React.Component {
                     : null}
                     </Link>
                     <ProductList />
-                    <h1 className="product-header"> Steez Fits </h1>
+                    <h1 className="product-header"> All SteezFits </h1>
                     <SteezFitList />
                 </div>
             </div>

@@ -28,7 +28,82 @@
 /* LOGIN FORM */
 .login-div {
   text-align: center;
+  border-radius: 5px;
+  background-color: white;
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 10%;
+  font-family: Plain;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgb(119, 119, 119);
 }
+
+.login-submit {
+  width: 100%;
+  background-color: white;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px black;
+  border-radius: 4px;
+  cursor: crosshair;
+  font-family: Plain;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgb(119, 119, 119);
+}
+
+.register-div {
+  text-align: center;
+  border-radius: 5px;
+  background-color: white;
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 10%;
+  font-family: Plain;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgb(119, 119, 119);
+}
+
+.register-submit {
+  width: 100%;
+  background-color: white;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px black;
+  border-radius: 4px;
+  cursor: crosshair;
+  font-family: Plain;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgb(119, 119, 119);
+}
+
+
+
 
 /* REGISTER FORM */
 .register-div {
@@ -53,7 +128,7 @@
   padding: 20px;
   font-size: 30px;
   text-align: center;
-  height: 275px;
+  height: 300px;
 }
 
 .grid-item:hover {
@@ -277,4 +352,16 @@
 .part-grid-item:hover {
   transform: scale(1.1);
   cursor: crosshair;
+}
+
+
+
+/* ERRRRRORRR PAGE */
+
+.error-div {
+  text-align: center;
+}
+
+.error-img {
+  padding: 30px;
 }

@@ -11,18 +11,18 @@ import ProductForm from './Components/ProductForm';
 import Home from './Containers/Home'
 import Steezhub from './Containers/SteezHub'
 import SteezShow from './Components/SteezShow';
+import PostForm from './Components/PostForm'
 
 import { connect } from 'react-redux'
 
 import {getProfileFetch} from './Redux/actions/UserAction'
+import AddParts from './Components/AddParts';
 
 class App extends React.Component {
 
   componentDidMount(){
     this.props.getProfileFetch()
   }
-
-
 
   render() {
     return (
@@ -38,6 +38,8 @@ class App extends React.Component {
             <Route path="/post/:id" component={SteezShow} />
             <Route path="/product/:id" component={ProductShow} />
             <Route path="/add-product" component={ProductForm} />
+            <Route path="/add-post" component={PostForm} />
+            <Route path="/addpart" component={AddParts} />
             <Route path="/home" component={Home} />
             <Route path="/" component={Error} />
           </Switch>

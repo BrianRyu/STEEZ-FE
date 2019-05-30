@@ -16,6 +16,10 @@ class SteezShow extends React.Component {
         this.props.increaseLike(this.props.post)
     }
 
+    handleButton = () => {
+        this.props.history.push('/addpart')
+    }
+
     render(){
         return(
             <div>
@@ -34,6 +38,11 @@ class SteezShow extends React.Component {
                 <div>
                     <p className="product-header"> Outfit Pieces </p>
                     <SteezProducts />
+                    <div className="post-button-div">
+                        {this.props.currentUser === null || this.props.post.user_id !== this.props.currentUser.id
+                        ? <p>Please Login For More Features!</p>
+                        : <button onClick={this.handleButton} className="button">+</button>}
+                    </div>
                 </div>
             </div>
 

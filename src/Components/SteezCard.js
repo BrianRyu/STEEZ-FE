@@ -15,7 +15,7 @@ class SteezCard extends React.Component {
             <div className="grid-item">
                 <p className="product-font">{this.props.post.name}</p>
                 <Link to={`/post/${this.props.post.id}`}>
-                <img onClick={this.handleClick} className="post-image" src={this.props.post.img_url} alt='' />
+                <img onClick={this.handleClick} className="product-image" src={this.props.post.img_url} alt='' />
                 </Link>
                 <p className="product-font" >Likes: {this.props.post.likes}</p>
                 <p className="product-font" >Views: {this.props.post.views}</p>

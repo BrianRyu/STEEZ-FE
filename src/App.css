@@ -36,22 +36,24 @@
 }
 
 /* GRID FOR PRODUCTS CSSS */
+
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   background-color: white;
   padding: 30px;
   align-items: stretch;
   justify-content: center;
   align-content: space-between;
 }
+
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
   text-align: center;
-  height: 250px;
+  height: 275px;
 }
 
 .grid-item:hover {
@@ -96,6 +98,11 @@
   width: 30%;
 }
 
+.product-part-image {
+  width: 20%;
+  height: 150px;
+}
+
 .product-font {
   font-family: Plain;
   font-size: 11.5px;
@@ -115,6 +122,8 @@
 .product-delete:hover {
   background-color: red;
 }
+
+
 
 .button {
   background-color: white;
@@ -184,6 +193,8 @@
   color: rgb(119, 119, 119);
 }
 
+
+
 .show-img {
   width: 40%;
 }
@@ -217,10 +228,42 @@
 }
 
 
-
-
 /* POST CSS */
 
 .post-image {
   width: 40%;
+}
+
+.post-button-div {
+  text-align: center;
+}
+
+.part-add {
+  float: right;
+  font-size: 50%;
+  cursor: crosshair;
+}
+
+.part-grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: white;
+  padding: 130px;
+  align-items: stretch;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.part-grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  height: 275px;
+}
+
+.part-grid-item:hover {
+  transform: scale(1.1);
+  cursor: crosshair;
 }

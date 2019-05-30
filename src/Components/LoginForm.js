@@ -41,7 +41,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="login-div">
-        <h3>Please Login</h3>
+        <h3>Login</h3>
         <form onSubmit={this.handleSubmit} className="login-form">
           <label>
             Username:
@@ -50,10 +50,11 @@ class LoginForm extends React.Component {
           <label>
             Password:
             <input type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
-          </label> <br/><br/>
+          </label>
           <input className="login-submit" type="submit" /> <br/><br/>
-          Don't have account? <Link to='register'>Register here</Link>
         </form>
+        Don't have account? <Link to='register'>Register here</Link>
+
       </div>
     );
   }

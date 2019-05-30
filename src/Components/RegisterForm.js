@@ -31,12 +31,12 @@ class RegisterForm extends Component {
       })
       .then(res => res.json())
       .then((data) => {
-        if (data.errors){
-          alert(data.errors)
+        console.log(data)
+        if (data.error){
+          alert(data.error)
         } else {
           localStorage.setItem("token", data.jwt)
           this.props.createUser(data)
-          console.log(data)
           loginUser(data.user)
           this.props.history.push('/home')
         }
@@ -50,7 +50,7 @@ class RegisterForm extends Component {
   render() {
     return (
       <div className="register-div">
-        <h3>RegisterPage</h3>
+        <h3>Register</h3>
         <form onSubmit={this.handleSubmit}>
           <label>Username: </label>
           <input name='username' value={this.state.username} onChange={this.handleChange} />
@@ -60,7 +60,6 @@ class RegisterForm extends Component {
           <br/><br/>
           <label>Password Confirmation: </label>
           <input name='confirmation' value={this.state.confirmation} onChange={this.handleChange} />
-          <br/><br/>
           <input className="register-submit" type="submit" />
         </form><br/>
         Already have account? <Link to='login'>Login here</Link>

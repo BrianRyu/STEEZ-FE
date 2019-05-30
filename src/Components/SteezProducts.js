@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+
+import FitCard from './FitCard'
 import ProductCard from "./ProductCard";
 // action import
 
@@ -9,7 +11,7 @@ class SteezProducts extends React.Component {
         return (
             <div>
                 <ul className="grid-container">
-                    {this.props.post.products ? this.props.post.products.map(product => <ProductCard product={product}/>) : null}
+                    {this.props.post.products ? this.props.post.products.map(product => <FitCard product={product}/>) : null}
                 </ul>
             </div>
         )

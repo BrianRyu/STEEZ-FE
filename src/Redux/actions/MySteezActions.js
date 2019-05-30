@@ -70,3 +70,23 @@ export const addPost = (postObj, id, localStorage) => dispatch => {
         dispatch({ type: "ADD_POST", payload: post })
     })
 }
+
+export const addPiece = (pieceId, postId, localStorage) => dispatch => {
+    fetch(`http://localhost:3005/api/v1/parts`,{
+    method: "POST",
+    headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        "Authorization": `BEARER ${localStorage.token}`
+        },
+        body: JSON.stringify({
+            post_id: postId,
+            product_id: pieceId
+        })
+    })
+    .then(res => res.json())
+    .then(piece => {
+        console.log(piece)
+        dispatch({ type: "ADD_PIECE", payload: piece})
+    })
+}    

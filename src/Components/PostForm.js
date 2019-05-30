@@ -20,6 +20,7 @@ class PostForm extends React.Component {
         let newPostObj = this.state
         let id = this.props.currentUser.id
         this.props.addPost(newPostObj, id, localStorage)
+        this.props.history.push('/home')
     }
     render(){
         return(

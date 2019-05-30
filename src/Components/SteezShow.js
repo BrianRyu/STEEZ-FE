@@ -16,6 +16,10 @@ class SteezShow extends React.Component {
         this.props.increaseLike(this.props.post)
     }
 
+    handleButton = () => {
+        this.props.history.push('/addpart')
+    }
+
     render(){
         return(
             <div>
@@ -35,7 +39,7 @@ class SteezShow extends React.Component {
                     <p className="product-header"> Outfit Pieces </p>
                     <SteezProducts />
                     <div className="post-button-div">
-                        <button className="button">+</button>
+                        <button onClick={this.handleButton} className="button">+</button>
                     </div>
                 </div>
             </div>

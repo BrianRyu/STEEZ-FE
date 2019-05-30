@@ -19,7 +19,7 @@ class ProductCard extends React.Component {
                 <p className="product-font">{this.props.product.name}</p>
                 <br />
                 <Link to={`/product/${this.props.product.id}`}>
-                <img className="product-image" src={this.props.product.img_url} alt='' />
+                <img className="product-image" src={this.props.product.img_url} alt={this.props.product.name}/>
                 </Link>
                 <br/>
             </nav>

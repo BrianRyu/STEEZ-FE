@@ -16,6 +16,7 @@ import PostForm from './Components/PostForm'
 import { connect } from 'react-redux'
 
 import {getProfileFetch} from './Redux/actions/UserAction'
+import AddParts from './Components/AddParts';
 
 class App extends React.Component {
 
@@ -38,6 +39,7 @@ class App extends React.Component {
             <Route path="/product/:id" component={ProductShow} />
             <Route path="/add-product" component={ProductForm} />
             <Route path="/add-post" component={PostForm} />
+            <Route path="/addpart" component={AddParts} />
             <Route path="/home" component={Home} />
             <Route path="/" component={Error} />
           </Switch>

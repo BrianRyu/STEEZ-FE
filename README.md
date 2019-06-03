@@ -14,18 +14,28 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### MVP 
+### STEEZ.
 
-Users can Sign Up and Login. User must be logged in to add items to their "My Steez." section.
+Users can Sign Up and Login. User must be logged in to add posts to their "My Steez." section and have full functionality of app in the Steez.Hub.
 
-My Steez. - Container that holds all products uploaded by the User
-WishList. - Works essentially as the 'Cart' where items can be "starred" which adds to the wish list.
-Add To Cart - Can add the product to the Cart - payment option not yet implemented (stretch)
+All valid users can upload products into the Steez.Hub, providing collection for other users to be inspired to include in their "posts".
 
-SteezCard - Each item will have a Start button and a Like button. Whichever product has most "Likes" will be featured in the "Trending" list.
+My Steez. - Container that holds all posts(MyFits) uploaded by the User.
+
+Steez.Hub. - Works as the 'Community' where posts can be "liked"; top 3 highest likes of the week gets featured in the "SteezFits of the Week".
+
+Products - Select a product to view product details and descriptions.
+
+SteezCard - Each product will have Views and a Like button. Whichever product has most "Likes" will be featured in the "SteezFits of the Week" list.
 
 ### CSS
-Semantic UI 
+Custom CSS - CSS Grid - CSS Hover Effects
 
 
+### Currently Working
+1. Adding "Comment" resource for users to be able to comment on eachother's posts.
+2. Allow users to put their uploaded products out for "bidding". (E-commerce)
+3. Implement Stripe API for payment methods.
+4. Users can bid for desired product - Highest bid takes the product at the end of the bidding window (every week).
+5. Background music on the web-app.
 

@@ -1,8 +1,9 @@
 Welcome to STEEZ. 
 Style with ease. 
 
-Community based application where User can edit their 'My Steez' page by adding products of their choice and removing. Products then can be used to create Steez.Fit Posts to be posted on the STEEZ.Hub community. All posts can be liked by the community and can be featured in the 'Trending' list.
-All products can be sold. The more likes an post gets -> Will be featured in the Trending list which will provide higher possibility of sale.
+Community based application where User can edit their 'My Steez' page by adding products of their choice and removing. Products then can be used to create Steez.Fit Posts to be posted on the STEEZ.Hub community. All posts can be liked by the community and can be featured in the 'featured' list.
+
+All products can be sold. The more likes a post gets -> Will be featured which will provide higher possibility of sale.
 
 Please follow the instructions below to get the app up and running. If you have any issues - feel free to contact me directly at s.brianryu@gmail.com
 

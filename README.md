@@ -1,7 +1,7 @@
 Welcome to STEEZ. 
 Style with ease. 
 
-Community based application where User can edit their 'My Steez' page by adding products of their choice and removing. Products then can be used to create Steez.Fit Posts to be posted on the STEEZ.Hub community. All posts can be liked by the community and can be featured in the 'featured' list.
+Community based application where User can edit their 'My Steez' page by adding products of their choice. Products then can be used to create Steez.Fit Posts to be posted on the STEEZ.Hub community. All posts can be liked by the community and can be featured in the 'featured' list.
 
 All products can be sold. The more likes a post gets -> Will be featured which will provide higher possibility of sale.
 
@@ -11,9 +11,6 @@ Please follow the instructions below to get the app up and running. If you have 
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
 ### STEEZ.
 
@@ -33,7 +30,7 @@ SteezCard - Each product will have Views and a Like button. Whichever product ha
 Custom CSS - CSS Grid - CSS Hover Effects
 
 
-### Currently Working
+### Stretch
 1. Adding "Comment" resource for users to be able to comment on eachother's posts.
 2. Allow users to put their uploaded products out for "bidding". (E-commerce)
 3. Implement Stripe API for payment methods.

@@ -1,44 +1,65 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { logoutUser } from '../Redux/actions/UserAction'
+import React from "react";
+import { connect } from "react-redux";
+import { logoutUser } from "../Redux/actions/UserAction";
 
 class NavBar extends React.Component {
+  handleClick = e => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    this.props.logoutUser();
+    window.location.href = "http://localhost:3000/login";
+  };
 
-    handleClick = e => {
-        e.preventDefault()
-        localStorage.removeItem("token")
-        this.props.logoutUser()
-        window.location.href = "http://localhost:3000/login"
-    }
+  handleOut = e => {
+    window.location.href = "http://localhost:3000/register";
+  };
 
-    handleOut = e => {
-        window.location.href = "http://localhost:3000/register"
-    }
+  handleIn = e => {
+    window.location.href = "http://localhost:3000/login";
+  };
 
-    handleIn = e => {
-        window.location.href = "http://localhost:3000/login"
-    }
-
-    render() {
-        return (
-            <nav className='navbar'>
-                <div>
-                    <br/>
-                    <a className="mainlogo navlink"name="STEEZ." href="/home">STEEZ.</a>
-                    <div>
-                        <button type="button" className="navlink" name="Register" onClick={this.handleOut}>REGISTER</button>
-                        {this.props.currentUser 
-                        ? <button onClick={this.handleClick} className="navlink" name="Logout">LOGOUT</button>
-                        : <button className="navlink" name="Login" onClick={this.handleIn}>LOGIN</button>}
-                    </div>
-                </div>
-            </nav>
-        )
-    }
+  render() {
+    return (
+      <nav className="navbar">
+        <div>
+          <br />
+          <a className="mainlogo navlink" name="STEEZ." href="/home">
+            STEEZ.
+          </a>
+          <div>
+            <button
+              type="button"
+              className="navlink"
+              name="Register"
+              onClick={this.handleOut}
+            >
+              REGISTER
+            </button>
+            {this.props.currentUser ? (
+              <button
+                onClick={this.handleClick}
+                className="navlink"
+                name="Logout"
+              >
+                LOGOUT
+              </button>
+            ) : (
+              <button className="navlink" name="Login" onClick={this.handleIn}>
+                LOGIN
+              </button>
+            )}
+          </div>
+        </div>
+      </nav>
+    );
+  }
 }
 
 const stateToProps = state => ({
-    currentUser: state.users.currentUser
-})
+  currentUser: state.users.currentUser
+});
 
-export default connect(stateToProps, {logoutUser}) (NavBar);
+export default connect(
+  stateToProps,
+  { logoutUser }
+)(NavBar);

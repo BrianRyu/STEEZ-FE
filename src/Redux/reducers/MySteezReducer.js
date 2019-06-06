@@ -30,8 +30,6 @@ const mySteezReducer = (state = initialState, action) => {
             return {...state, parts: action.payload}
         case "GET_PIECE":
             return {...state, currentPart: action.payload}
-
-
         default:
             return state;
     }

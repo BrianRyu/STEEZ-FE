@@ -35,7 +35,6 @@ class PostForm extends React.Component {
                     <br /> <br />
                     <input type="submit"/>
                 </form>
-
             </div>
         )
     }

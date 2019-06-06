@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 
 import FitCard from './FitCard'
-import ProductCard from "./ProductCard";
 // action import
 
 class SteezProducts extends React.Component {

@@ -4,6 +4,8 @@ import { fetchPost, increaseLike } from '../Redux/actions/MySteezActions'
 import { connect } from 'react-redux'
 import SteezProducts from './SteezProducts'
 
+import CommentCont from '../Containers/CommentCont'
+
 
 class SteezShow extends React.Component {
 
@@ -44,6 +46,7 @@ class SteezShow extends React.Component {
                         : <button onClick={this.handleButton} className="button">+</button>}
                     </div>
                 </div>
+                <CommentCont />
             </div>
 
         )

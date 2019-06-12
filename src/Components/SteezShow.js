@@ -46,7 +46,7 @@ class SteezShow extends React.Component {
                         : <button onClick={this.handleButton} className="button">+</button>}
                     </div>
                 </div>
-                {/* <CommentCont /> */}
+                <CommentCont />
             </div>
 
         )

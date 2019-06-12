@@ -365,3 +365,9 @@
 .error-img {
   padding: 30px;
 }
+
+/* COMMENTS CSS  */
+
+.comment-container {
+  border: 1px solid black;
+}

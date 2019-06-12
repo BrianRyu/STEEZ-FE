@@ -16,12 +16,16 @@ class Comments extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        let comment = this.state.comment
-        let user_id = this.props.currentUser.id
-        let post_id = this.props.currentPost.id
-        if(this.state.comment !== "" && this.state.comment !== null){
-            console.log(this.state)
-            this.props.addComment(comment, user_id, post_id, localStorage)
+        if(this.props.currentUser === null){
+            alert("Please LogIn or SignUp to leave comments on posts")
+        } else {
+            let comment = this.state.comment
+            let user_id = this.props.currentUser.id
+            let post_id = this.props.currentPost.id
+            if(this.state.comment !== "" && this.state.comment !== null){
+                console.log(this.state)
+                this.props.addComment(comment, user_id, post_id, localStorage)
+            }
         }
     }
 

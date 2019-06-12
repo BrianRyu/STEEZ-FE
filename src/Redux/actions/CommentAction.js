@@ -17,3 +17,12 @@ export const addComment = (comment, user_id, post_id, localStorage) => dispatch 
         dispatch({ type: "ADD_COMMENT", payload: commentObj})
     })
 } 
+
+
+export const fetchComments = () => dispatch => {
+    fetch('http://localhost:3005/api/v1/comments')
+    .then(res => res.json())
+    .then(comments => {
+        dispatch({ type: "FETCH_COMMENTS", payload: comments})
+    })
+}

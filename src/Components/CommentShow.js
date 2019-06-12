@@ -12,8 +12,11 @@ class CommentShow extends React.Component {
         return (
             <div>
                <ul>
-                   {this.props.comments.allComments.map(comment => comment.post_id === this.props.currentPost.id ? <li>{comment.comment}</li> : null)}
+                   {this.props.comments.allComments.map(comment => comment.post_id === this.props.currentPost.id 
+                    ? <p> {comment.comment}</p> 
+                    : null)}
                </ul>
+
             </div>
         )
     }

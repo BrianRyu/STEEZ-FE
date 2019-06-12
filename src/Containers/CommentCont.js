@@ -6,7 +6,7 @@ import React from 'react'
 class CommentCont extends React.Component {
     render() {
         return(
-            <div>
+            <div className = "comment-cont">
                 <Comments />
                 <CommentShow />
             </div>

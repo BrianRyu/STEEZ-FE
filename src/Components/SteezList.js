@@ -10,7 +10,7 @@ class SteezList extends React.Component {
 
             <div>
                 <ul className="grid-container">
-                    {this.props.posts ? this.props.posts.map(post => <SteezCard post={post}/>) 
+                    {this.props.posts !== null ? this.props.posts.posts.map(post => <SteezCard post={post}/>) 
                     : <p>Please Post More Fits!</p> }
                 </ul>
             </div>
@@ -20,7 +20,7 @@ class SteezList extends React.Component {
 
 const stateToProps = (state) => {
     return {
-        posts: state.users.currentUser.posts
+        posts: state.users.currentUser
     }
 }
 

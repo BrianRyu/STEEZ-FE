@@ -22,7 +22,6 @@ const mySteezReducer = (state = initialState, action) => {
             }
         }
         case "ADD_POST":
-            console.log(action, state)
             let newPost = action.payload
             let addedArray = [...state.allPosts, newPost]
             return {...state, allPosts: addedArray}

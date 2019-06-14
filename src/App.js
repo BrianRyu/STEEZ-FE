@@ -22,8 +22,13 @@ class App extends React.Component {
 
   componentDidMount(){
     this.props.getProfileFetch()
+    let audio = new Audio("https://p.scdn.co/mp3-preview/dad5a474a976c21f273e1d050d96e4b891f025f4?cid=null")
+    audio.play()
   }
 
+
+
+  
   render() {
     return (
       <div>

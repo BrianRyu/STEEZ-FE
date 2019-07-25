@@ -12,6 +12,8 @@ import Home from './Containers/Home'
 import Steezhub from './Containers/SteezHub'
 import SteezShow from './Components/SteezShow';
 import PostForm from './Components/PostForm'
+import AllFitsList from './Components/AllFitsList';
+import AllProductsList from './Components/AllProductsList';
 
 import { connect } from 'react-redux'
 
@@ -42,6 +44,8 @@ class App extends React.Component {
             <Route path="/add-post" component={PostForm} />
             <Route path="/addpart" component={AddParts} />
             <Route path="/home" component={Home} />
+            <Route path="/all-products" component={AllProductsList}/>
+            <Route path="/all-fits" component={AllFitsList}/>
             <Route path="/" component={Error} />
           </Switch>
         </BrowserRouter>

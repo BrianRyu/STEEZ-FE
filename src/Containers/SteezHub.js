@@ -21,12 +21,16 @@ class SteezHub extends React.Component {
                     ? <button className="product-add-button">+</button> 
                     : null}
                     {/* route this button to view all products list */}
+                    </Link>
+                    <Link to="/all-products">
                     <button className="product-view-all">View All Products</button>
                     </Link>
                     <ProductList />
                     <h1 className="product-header"> All SteezFits </h1>
                     {/* route this button to list of all SteezFits */}
+                    <Link to="/all-fits">
                     <button className="steezfit-view-all">View All SteezFits</button>
+                    </Link>
                     <br/>
                     <SteezFitList />
                 </div>

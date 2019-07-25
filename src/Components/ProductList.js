@@ -15,7 +15,7 @@ class ProductList extends React.Component {
         return (
             <div>
                 <ul className='grid-container'>
-                  {this.props.products.map(product => <ProductCard product={product} />)}
+                  {this.props.products.slice(0, 3).map(product => <ProductCard product={product} />)}
                 </ul>
             </div>
         )

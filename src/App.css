@@ -371,3 +371,16 @@
 .comment-container {
   border: 1px solid black;
 }
+
+
+/* View ALl Products and All SteezFits Button on SteezHub */
+
+.product-view-all {
+  float: right;
+  margin-right: 40px;
+}
+
+.steezfit-view-all {
+  float: right;
+  margin-right: 40px;
+}

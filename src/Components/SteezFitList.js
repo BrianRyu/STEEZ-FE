@@ -13,7 +13,7 @@ class SteezFitList extends React.Component {
         return(
             <div>
                 <ul className="grid-container">
-                {this.props.posts ? this.props.posts.slice(0, 3).map(post => <SteezCard post={post}/>) : null}
+                {this.props.posts ? this.props.posts.slice(3, 6).map(post => <SteezCard post={post}/>) : null}
                 </ul>
             </div>
         )

@@ -32,6 +32,8 @@ class SteezHub extends React.Component {
                     <button className="steezfit-view-all">View All SteezFits</button>
                     </Link>
                     <br/>
+                    <br/>
+                    <br/>
                     <SteezFitList />
                 </div>
             </div>

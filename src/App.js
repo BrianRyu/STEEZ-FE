@@ -12,6 +12,8 @@ import Home from './Containers/Home'
 import Steezhub from './Containers/SteezHub'
 import SteezShow from './Components/SteezShow';
 import PostForm from './Components/PostForm'
+import AllFitsList from './Components/AllFitsList';
+import AllProductsList from './Components/AllProductsList';
 
 import { connect } from 'react-redux'
 
@@ -20,15 +22,11 @@ import AddParts from './Components/AddParts';
 
 class App extends React.Component {
 
+   
   componentDidMount(){
     this.props.getProfileFetch()
-    let audio = new Audio("https://p.scdn.co/mp3-preview/dad5a474a976c21f273e1d050d96e4b891f025f4?cid=null")
-    audio.play()
   }
 
-
-
-  
   render() {
     return (
       <div>
@@ -46,6 +44,8 @@ class App extends React.Component {
             <Route path="/add-post" component={PostForm} />
             <Route path="/addpart" component={AddParts} />
             <Route path="/home" component={Home} />
+            <Route path="/all-products" component={AllProductsList}/>
+            <Route path="/all-fits" component={AllFitsList}/>
             <Route path="/" component={Error} />
           </Switch>
         </BrowserRouter>

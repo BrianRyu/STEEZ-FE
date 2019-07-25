@@ -5,7 +5,7 @@ import SteezFitList from '../Components/SteezFitList'
 
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-
+ 
 class SteezHub extends React.Component {
     render() {
         return (
@@ -20,9 +20,20 @@ class SteezHub extends React.Component {
                     {this.props.currentUser !== null 
                     ? <button className="product-add-button">+</button> 
                     : null}
+                    {/* route this button to view all products list */}
+                    </Link>
+                    <Link to="/all-products">
+                    <button className="product-view-all">View All Products</button>
                     </Link>
                     <ProductList />
                     <h1 className="product-header"> All SteezFits </h1>
+                    {/* route this button to list of all SteezFits */}
+                    <Link to="/all-fits">
+                    <button className="steezfit-view-all">View All SteezFits</button>
+                    </Link>
+                    <br/>
+                    <br/>
+                    <br/>
                     <SteezFitList />
                 </div>
             </div>

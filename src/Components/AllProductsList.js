@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 // action import
 import {fetchProducts} from '../Redux/actions/ProductActions'
 
-class ProductList extends React.Component {
+class AllProductsList extends React.Component {
 
   componentDidMount() {
     this.props.fetchProducts()
@@ -15,7 +15,7 @@ class ProductList extends React.Component {
         return (
             <div>
                 <ul className='grid-container'>
-                  {this.props.products.slice(0, 3).map(product => <ProductCard product={product} />)}
+                  {this.props.products.map(product => <ProductCard product={product} />)}
                 </ul>
             </div>
         )
@@ -29,4 +29,4 @@ const stateToProps = state => {
     };
 };
 
-export default connect(stateToProps, {fetchProducts} )(ProductList);
+export default connect(stateToProps, {fetchProducts} )(AllProductsList);

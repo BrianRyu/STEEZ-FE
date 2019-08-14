@@ -1,4 +1,4 @@
-
+![Homepage of STEEZ.](https://i.ibb.co/cyRJ4rT/Screen-Shot-2019-08-13-at-8-36-50-PM.png)
 
 Welcome to STEEZ. 
 Style with ease. 

@@ -7,7 +7,7 @@ import { getProfileFetch } from "../Redux/actions/UserAction";
 class LoginForm extends React.Component {
   state = {
     username: "",
-    password: ""
+    password: "" 
   };
 
   handleChange = e => {

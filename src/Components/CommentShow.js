@@ -12,6 +12,8 @@ class CommentShow extends React.Component {
         return (
             <div>
                <ul>
+                   {console.log(this.props.comments)}
+                   {console.log(this.props.currentPost)}
                    {this.props.comments.allComments.map(comment => comment.post_id === this.props.currentPost.id 
                     ? <p> {comment.comment}</p> 
                     : null)}

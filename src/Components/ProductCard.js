@@ -20,7 +20,7 @@ class ProductCard extends React.Component {
                 <br />
                 <Link to={`/product/${this.props.product.id}`}>
                 <img className="product-image" src={this.props.product.img_url} alt={this.props.product.name}/>
-                </Link>/
+                </Link>
                 <br/>
             </nav>
         )
